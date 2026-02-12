@@ -2,7 +2,10 @@ import React from "react";
 import { View, Text, StyleSheet, StatusBar, FlatList, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import person_1 from "./assets/picture.png"
+import person_1 from "./assets/picture.png" 
+
+// import { Badge,Button,Chip,TextInput,Icon,ActivityIndicator } from "react-native-paper";
+// activityindicator,badge,button,chip,textinput,icon
 
 const App = () => {
 
@@ -62,30 +65,32 @@ const App = () => {
 			Img: person_1,
 			Name: "Raju",
 			Msg: " Hello"
+		},
+		{
+			Img: person_1,
+			Name: "Raju",
+			Msg: " Hello"
+		},
+		{
+			Img: person_1,
+			Name: "Raju",
+			Msg: " Hello"
+		},
+		{
+			Img: person_1,
+			Name: "Raju",
+			Msg: " Hello"
 		}
 	]
+
 	return (
 		<>
-			{/* <SafeAreaView style={{ flex: 1, backgroundColor: "blue" }} /> */}
-			<StatusBar barStyle={"white-content"} />
-			<View style={[Mystyles.MyStatusbar, { paddingTop: 20 }]}>
-			</View>
-			<FlatList
-				data={MyData}
-				renderItem={({ item }) => (
-					<View style={Mystyles.parent}>
-						<View style={Mystyles.Image_view}>
-							<Image source={item.Img} style={Mystyles.Image_tap} />
-						</View>
-						<View style={Mystyles.infoparent}>
-							<Text style={Mystyles.SendName}>{item.Name}</Text>
-							<Text style={Mystyles.LastMsg}>{item.Msg}</Text>
-						</View>
-					</View>
-				)}
-			/>
-		</>
+			<SafeAreaView style={{ flex: 1 }}>
+				<StatusBar backgroundColor="blue" barStyle='light-content' />
 
+			</SafeAreaView>
+		</>
+		
 	)
 }
 
@@ -93,7 +98,7 @@ export default App;
 
 const Mystyles = StyleSheet.create({
 	MyStatusbar: {
-		backgroundColor: "blue"
+		backgroundColor: "red"
 	},
 	parent: {
 		width: "100%",
