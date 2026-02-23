@@ -1,132 +1,39 @@
-import React from "react";
-import { View, Text, StyleSheet, StatusBar, FlatList, Image } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import person_1 from "./assets/picture.png" 
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import { Icon } from 'react-native-paper';
+import Home from './Home';
+import Contact from './Contact';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import {Icon} from 'react-native-paper';
+import { createStackNavigator } from '@react-navigation/stack';
+const Stack = createNativeStackNavigator()
+export default function App() {
+  return (
+   <NavigationContainer>
+    <Stack.Navigator
+      screenOptions={{
+        // title:"HAI"
+        // headerShown:false
+        // headerStyle:{
+        //   backgroundColor:"red"
+        // }
+        // headerTintColor:"red"
+        // headerTitleStyle:{
+        //   fontSize:26
+        // }
+        headerTitleAlign:"center",
+        headerRight:()=> <Icon source={"bell"} size={24}/>,
+        // headerLeft:() => <Icon source={"home"} size={24}/>,
+        headerBackButtonDisplayMode:"minimal",
+        animation:"fade"
 
-// import { Badge,Button,Chip,TextInput,Icon,ActivityIndicator } from "react-native-paper";
-// activityindicator,badge,button,chip,textinput,icon
-
-const App = () => {
-
-
-	const MyData = [
-		{
-			"Img": person_1,
-			"Name": "Raju",
-			"Msg": " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		},
-		{
-			Img: person_1,
-			Name: "Raju",
-			Msg: " Hello"
-		}
-	]
-
-	return (
-		<>
-			<SafeAreaView style={{ flex: 1 }}>
-				<StatusBar backgroundColor="blue" barStyle='light-content' />
-
-			</SafeAreaView>
-		</>
-		
-	)
+      }}
+    >
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Contact" component={Contact} />
+    </Stack.Navigator>
+   </NavigationContainer>
+  );
 }
-
-export default App;
-
-const Mystyles = StyleSheet.create({
-	MyStatusbar: {
-		backgroundColor: "red"
-	},
-	parent: {
-		width: "100%",
-		flexDirection: "row",
-		backgroundColor: "gray",
-		marginVertical: 7
-	},
-	Image_view: {
-		width: 100,
-		height: 75,
-		paddingTop: 10,
-		alignItems: "center"
-	},
-	Image_tap: {
-		width: 50,
-		height: 50,
-		borderRadius: 25
-	},
-	infoparent: {
-		justifyContent: "space-evenly",
-		marginLeft: 10
-	},
-	SendName: {
-		fontSize: 24,
-	},
-	LastMsg: {
-		fontSize: 20
-	}
-
-})
 
